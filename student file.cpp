@@ -38,3 +38,12 @@ std::vector<int> juego_secuencia(const std::vector<int>& habilidades, int N, int
             cola.erase(cola.begin());
             mesa.push_back(persona_cola);
         }
+         if (i == K) {
+            // Si es el juego K, devuelve las habilidades del ganador y perdedor
+            return { ganador, perdedor };
+        }
+    }
+
+    // Si K es mayor que el numero de juegos, devuelve un vector vacio
+    return {};
+}
