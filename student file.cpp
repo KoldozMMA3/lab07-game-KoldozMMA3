@@ -25,3 +25,10 @@ std::vector<int> juego_secuencia(const std::vector<int>& habilidades, int N, int
 
 // Agrega al perdedor a la cola
         cola.push_back(perdedor);
+        if (juegos_ganados == N) {
+            // Si el ganador actual ha ganado N juegos seguidos, lo saca de la mesa
+            mesa.erase(std::remove(mesa.begin(), mesa.end(), ganador), mesa.end());
+
+            // Inserta al ganador actual al inicio de la cola
+            cola.insert(cola.begin(), ganador);
+        }
