@@ -46,4 +46,20 @@ std::vector<int> juego_secuencia(const std::vector<int>& habilidades, int N, int
 
     // Si K es mayor que el numero de juegos, devuelve un vector vacio
     return {};
+}  
+int N, K;
+    std::cout << "Ingrese el valor de N: ";
+    std::cin >> N;
+
+    std::cout << "Ingrese el valor de K: ";
+    std::cin >> K;
+
+    std::vector<int> resultado = juego_secuencia(habilidades, N, K);
+    if (resultado.empty()) {
+        std::cout << "K es mayor que el numero de juegos." << std::endl;
+    } else {
+        std::cout << "Resultado: " << resultado[0] << ", " << resultado[1] << std::endl;
+    }
+
+    return 0;
 }
