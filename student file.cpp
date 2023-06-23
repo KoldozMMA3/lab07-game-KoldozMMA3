@@ -20,3 +20,8 @@ std::vector<int> juego_secuencia(const std::vector<int>& habilidades, int N, int
             ganador_actual = ganador;
             juegos_ganados = 1;
         }
+// Elimina al perdedor de la mesa
+        mesa.erase(std::remove(mesa.begin(), mesa.end(), perdedor), mesa.end());
+
+// Agrega al perdedor a la cola
+        cola.push_back(perdedor);
