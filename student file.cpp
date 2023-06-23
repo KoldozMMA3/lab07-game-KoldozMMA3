@@ -32,3 +32,9 @@ std::vector<int> juego_secuencia(const std::vector<int>& habilidades, int N, int
             // Inserta al ganador actual al inicio de la cola
             cola.insert(cola.begin(), ganador);
         }
+        if (mesa.size() < 2) {
+            // Si hay menos de 2 personas en la mesa, toma a la primera persona de la cola y la coloca en la mesa
+            int persona_cola = cola.front();
+            cola.erase(cola.begin());
+            mesa.push_back(persona_cola);
+        }
